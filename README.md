@@ -46,3 +46,13 @@
 
 
 
+### AWS credentials
+
+See aws-cred.sh
+
+And test...
+
+    aws sts get-caller-identity
+        
+        
+
