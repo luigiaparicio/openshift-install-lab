@@ -54,5 +54,13 @@ And test...
 
     aws sts get-caller-identity
         
-        
+   
+   ### Create SSH key
 
+    ssh-keygen -f ~/.ssh/cluster-${GUID}-key -N ''
+
+
+
+### Install OCP
+
+    openshift-install create cluster --dir $HOME/cluster-${GUID}
