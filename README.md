@@ -1,6 +1,7 @@
 # openshift-install-lab
 
 
+## Primera parte como ROOT en el Bastion
 
     sudo -i
     echo ${GUID}
@@ -44,11 +45,30 @@
 
     oc completion bash >/etc/bash_completion.d/openshift
 
-
+    Ctrl+d or exit
+    
+## Segunda parte sin ROOT
 
 ### AWS credentials
 
-See aws-cred.sh
+Create aws-cred.sh
+
+    export AWSKEY=<YOURACCESSKEY>
+    export AWSSECRETKEY=<YOURSECRETKEY>
+    export REGION=us-east-2
+
+    mkdir $HOME/.aws
+    cat << EOF >>  $HOME/.aws/credentials
+    [default]
+    aws_access_key_id = ${AWSKEY}
+    aws_secret_access_key = ${AWSSECRETKEY}
+    region = $REGION
+    EOF
+
+
+Run aws-cred.sh
+
+    bash aws-cred.sh
 
 And test...
 
