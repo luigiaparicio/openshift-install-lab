@@ -73,7 +73,9 @@ Run aws-cred.sh
 And test...
 
     aws sts get-caller-identity
-        
+    
+    
+
    
    ### Create SSH key
 
@@ -84,3 +86,16 @@ And test...
 ### Install OCP
 
     openshift-install create cluster --dir $HOME/cluster-${GUID}
+    
+    
+    
+    
+    
+## Add Machines for...
+
+    export KUBECONFIG=~/<CLUSTER-NAME>/auth/kubeconfig
+    CLUSTERID=$(oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].metadata.labels.machine\.openshift\.io/cluster-api-cluster}')
+    echo $CLUSTERID
+    
+    curl -s https://raw.githubusercontent.com/red-hat-storage/ocs-training/master/training/modules/ocs4/attachments/cluster-workerocs-us-east-2.yaml | sed -e "s/CLUSTERID/${CLUSTERID}/g" | oc apply -f -
+
