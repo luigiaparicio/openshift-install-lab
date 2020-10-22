@@ -91,7 +91,7 @@ And test...
     
     
     
-## Add Machines for...
+## Add Machines for OCS
 
     export KUBECONFIG=~/<CLUSTER-NAME>/auth/kubeconfig
     CLUSTERID=$(oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].metadata.labels.machine\.openshift\.io/cluster-api-cluster}')
