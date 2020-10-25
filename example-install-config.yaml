@@ -13,9 +13,9 @@ compute:
         type: gp2
       type: m5.4xlarge
       zones:
-      - us-east-1a
-      - us-east-1b
-      - us-east-1c
+      - us-east-2a
+      - us-east-2b
+      - us-east-2c
   replicas: 3
 controlPlane:
   architecture: amd64
@@ -24,9 +24,9 @@ controlPlane:
   platform:
     aws:
       zones:
-      - us-east-1a
-      - us-east-1b
-      - us-east-1c
+      - us-east-2a
+      - us-east-2b
+      - us-east-2c
       rootVolume:
         iops: 100
         size: 120
@@ -47,7 +47,7 @@ networking:
   - 172.30.0.0/16
 platform:
   aws:
-    region: us-east-1
+    region: us-east-2
 publish: External
 pullSecret: '{auth blablabla}'
 fips: false
