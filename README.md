@@ -21,9 +21,13 @@
     # Clean up downloaded files
     rm -rf /root/awscli-bundle /root/awscli-bundle.zip
     
+
+### OpenShift Version
+
+    OCP_VERSION=4.6.1
+
 ### OpenShift Installer
 
-    OCP_VERSION=4.5.13
     wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/${OCP_VERSION}/openshift-install-linux-${OCP_VERSION}.tar.gz
     tar zxvf openshift-install-linux-${OCP_VERSION}.tar.gz -C /usr/bin
     rm -f openshift-install-linux-${OCP_VERSION}.tar.gz /usr/bin/README.md
@@ -51,7 +55,9 @@
 
 ### AWS credentials
 
-Create aws-cred.sh
+Create this script
+
+   **aws-cred.sh**
 
     export AWSKEY=<YOURACCESSKEY>
     export AWSSECRETKEY=<YOURSECRETKEY>
@@ -70,7 +76,7 @@ Run aws-cred.sh
 
     bash aws-cred.sh
 
-And test...
+And test it ...
 
     aws sts get-caller-identity
     
