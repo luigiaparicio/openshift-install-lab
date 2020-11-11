@@ -55,9 +55,7 @@
 
 ### AWS credentials
 
-Create this script
-
-   **aws-cred.sh**
+Create AWS credentials file
 
     export AWSKEY=<YOURACCESSKEY>
     export AWSSECRETKEY=<YOURSECRETKEY>
@@ -72,18 +70,13 @@ Create this script
     EOF
 
 
-Run aws-cred.sh
-
-    bash aws-cred.sh
-
 And test it ...
 
     aws sts get-caller-identity
     
     
 
-   
-   ### Create SSH key
+### Create SSH key
 
     ssh-keygen -f ~/.ssh/cluster-${GUID}-key -N ''
 
@@ -93,7 +86,8 @@ And test it ...
 
     openshift-install create cluster --dir $HOME/cluster-${GUID}
     
-    
+ Example answers:
+ WIP
     
     
     
