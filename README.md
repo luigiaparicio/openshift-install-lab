@@ -59,6 +59,7 @@ Create AWS credentials file
 
     export AWSKEY=<YOURACCESSKEY>
     export AWSSECRETKEY=<YOURSECRETKEY>
+    
     export REGION=us-east-2
 
     mkdir $HOME/.aws
