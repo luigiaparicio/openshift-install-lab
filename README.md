@@ -88,7 +88,7 @@ And test it ...
     openshift-install create cluster --dir $HOME/cluster-${GUID}
     
  Example answers:
- - SSH Public Key: /home/*USERNAME*/.ssh/cluster-492d-key.pub
+ - SSH Public Key: $HOME/cluster-${GUID}/.ssh/cluster-492d-key.pub
  - Platform: aws
  - Region: us-east-2
  - sandbox392.opentlc.com
