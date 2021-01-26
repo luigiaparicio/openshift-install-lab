@@ -104,7 +104,7 @@ And test it ...
     CLUSTERID=$(oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].metadata.labels.machine\.openshift\.io/cluster-api-cluster}')
     echo $CLUSTERID
     
-    curl -s https://raw.githubusercontent.com/red-hat-storage/ocs-training/master/training/modules/ocs4/attachments/cluster-workerocs-us-east-2.yaml | sed -e "s/CLUSTERID/${CLUSTERID}/g" | oc apply -f -
+    curl -s https://raw.githubusercontent.com/luigiaparicio/openshift-install-lab/master/manifests/machinesets-ocs-us-east-2.yaml| sed -e "s/CLUSTERID/${CLUSTERID}/g" | oc apply -f -
     
  ### Deploy OCS Operator
  
