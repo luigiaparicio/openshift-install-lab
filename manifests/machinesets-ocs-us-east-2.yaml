@@ -21,6 +21,7 @@ spec:
         machine.openshift.io/cluster-api-machineset: CLUSTERID-ocs-us-east-2a
     spec:
       metadata:
+        labels:
           cluster.ocs.openshift.io/openshift-storage: ""
           node-role.kubernetes.io/worker: ""
       providerSpec:
@@ -86,6 +87,7 @@ spec:
         machine.openshift.io/cluster-api-machineset: CLUSTERID-ocs-us-east-2b
     spec:
       metadata:
+        labels:
           cluster.ocs.openshift.io/openshift-storage: ""
           node-role.kubernetes.io/worker: ""
       providerSpec:
@@ -151,6 +153,7 @@ spec:
         machine.openshift.io/cluster-api-machineset: CLUSTERID-ocs-us-east-2c
     spec:
       metadata:
+        labels:
           cluster.ocs.openshift.io/openshift-storage: ""
           node-role.kubernetes.io/worker: ""
       providerSpec:
