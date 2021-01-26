@@ -96,11 +96,19 @@ And test it ...
  - Pull Secret: *Paste your pull secret here*
     
     
-## Add Machines for OCS
+## Deploy OCS
+
+### Create OCS Nodes
 
     export KUBECONFIG=$HOME/cluster-${GUID}/auth/kubeconfig
     CLUSTERID=$(oc get machineset -n openshift-machine-api -o jsonpath='{.items[0].metadata.labels.machine\.openshift\.io/cluster-api-cluster}')
     echo $CLUSTERID
     
     curl -s https://raw.githubusercontent.com/red-hat-storage/ocs-training/master/training/modules/ocs4/attachments/cluster-workerocs-us-east-2.yaml | sed -e "s/CLUSTERID/${CLUSTERID}/g" | oc apply -f -
+    
+ ### Deploy OCS Operator
+ 
+ - Login as cluster-admin in OpenShift Web Console
+ - Operators -> OperatorHub -> Search for OpenShift Container Storage and install it with default settings and remember to "Enable operator recommended cluster monitoring on this namespace"
+ - Installed Operators -> OpenShift Container Storage -> Storage Cluster -> Create OCS Cluster Service -> Select your OCS Nodes, disk size, and create
 
